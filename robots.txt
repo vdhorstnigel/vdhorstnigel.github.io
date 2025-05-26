@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vdhorstnigel.github.io/sitemap.xml
