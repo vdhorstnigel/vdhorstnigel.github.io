@@ -22,13 +22,43 @@
     </item>
     
     <item>
-      <title>Stonks bot</title>
+      <title>CDR-Reader</title>
+      <link>http://localhost:1313/projects/cdr-reader/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
+      <guid>http://localhost:1313/projects/cdr-reader/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/cdr-reader/projects/CDR-Reader/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Microcontroller drone</title>
+      <link>http://localhost:1313/projects/microcontroller-drone/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
+      <guid>http://localhost:1313/projects/microcontroller-drone/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/microcontroller-drone/projects/Microcontroller%20Drone/featured.png" />
+    </item>
+    
+    <item>
+      <title>CDR-Reader</title>
       <link>http://localhost:1313/projects/stonks-bot/</link>
       <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
       <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
       <guid>http://localhost:1313/projects/stonks-bot/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/stonks-bot/projects/Stonks%20bot/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Wakey Wakey</title>
+      <link>http://localhost:1313/reviews/first-restaurant/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
+      <guid>http://localhost:1313/reviews/first-restaurant/</guid>
+      <description></description>
+      
     </item>
     
   </channel>

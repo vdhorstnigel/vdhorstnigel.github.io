@@ -21,6 +21,13 @@ enableEmoji = true
 [pagination]
   pagerSize = 100
 
+[params.assets]
+  customCSS = ["css/custom.css"]
+
+[services]
+  [services.disqus]
+    shortname = 'vdhorstnigel'
+
 [imaging]
   anchor = 'Center'
 
