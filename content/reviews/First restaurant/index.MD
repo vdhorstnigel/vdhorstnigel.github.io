@@ -2,7 +2,6 @@
 title: "Wakey Wakey"
 description: "302 Beach Rd"
 date: 2020-02-15
-comments: true
 ---
 
 {{< lead >}}
