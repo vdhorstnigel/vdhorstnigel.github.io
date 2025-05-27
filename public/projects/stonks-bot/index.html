@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>EE4002D &middot; Nigel vdh</title>
-  <meta name="title" content="EE4002D &middot; Nigel vdh" />
+  <title>Stonks bot &middot; Nigel vdh</title>
+  <meta name="title" content="Stonks bot &middot; Nigel vdh" />
   
-  <meta name="description" content="My final year project from NUS EE4002D Project 184" />
+  <meta name="description" content="Telegram bot to learn about stocks" />
   
   
   
-  <link rel="canonical" href="http://localhost:1313/projects/ee4002d-final-year-project-copy/" />
+  <link rel="canonical" href="http://localhost:1313/projects/stonks-bot/" />
   
   
   
@@ -64,18 +64,22 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/projects/ee4002d-final-year-project-copy/">
+  <meta property="og:url" content="http://localhost:1313/projects/stonks-bot/">
   <meta property="og:site_name" content="Nigel vdh">
-  <meta property="og:title" content="EE4002D">
-  <meta property="og:description" content="My final year project from NUS EE4002D Project 184">
+  <meta property="og:title" content="Stonks bot">
+  <meta property="og:description" content="Telegram bot to learn about stocks">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2020-05-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-05-10T00:00:00+00:00">
+    <meta property="og:image" content="http://localhost:1313/projects/stonks-bot/projects/Stonks%20bot/featured.webp">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="EE4002D">
-  <meta name="twitter:description" content="My final year project from NUS EE4002D Project 184">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/projects/stonks-bot/projects/Stonks%20bot/featured.webp">
+  <meta name="twitter:title" content="Stonks bot">
+  <meta name="twitter:description" content="Telegram bot to learn about stocks">
 
   
   <script type="application/ld+json">
@@ -83,26 +87,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "My projects",
-    "name": "EE4002D",
-    "headline": "EE4002D",
-    "description": "My final year project from NUS EE4002D Project 184",
+    "name": "Stonks bot",
+    "headline": "Stonks bot",
+    "description": "Telegram bot to learn about stocks",
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/projects\/ee4002d-final-year-project-copy\/",
+    "url" : "http:\/\/localhost:1313\/projects\/stonks-bot\/",
     "author" : {
       "@type": "Person",
       "name": "Nigel van der Horst"
     },
+    "copyrightYear": "2020",
+    "dateCreated": "2020-05-10T00:00:00\u002b00:00",
+    "datePublished": "2020-05-10T00:00:00\u002b00:00",
     
-    
-    
-    
-    
+    "dateModified": "2020-05-10T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "13"
+    "wordCount": "26"
   }]
   </script>
 
@@ -460,11 +464,46 @@
 
 <article>
   
+  
+  
+  
+  
+  
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/projects/stonks-bot/projects/Stonks%20bot/featured_hu_a7708bb913eb7f35.webp);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
 
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      EE4002D
+      Stonks bot
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -481,6 +520,8 @@
 
 
 
+
+  
 
 
 
@@ -507,7 +548,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span>13 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+  <time datetime="2020-05-10T00:00:00&#43;00:00">10 May 2020</time><span class="px-2 text-primary-500">&middot;</span><span>26 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
   
 
   
@@ -532,10 +573,31 @@
     
 
     
-      
-      
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+    
+
+      <div class="min-w-0 min-h-0 max-w-fit">
         
         
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>I initially created this bot to track the stock prices and to update me when prices change for the stocks that my sister bought for me.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+          
+            
+            
 <div class="flex author">
   
     
@@ -641,36 +703,14 @@
   </div>
 </div>
 
-      
-
-      
-
-      
-      <div class="mb-5"></div>
-      
-
-    
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-    
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
-        
-
-
-        <div class="article-content max-w-prose mb-20">
-          <p>Project 184 - Fruit Freshness Monitoring with a Portable Electronic Nose</p>
-<p>Using ESP32</p>
+          
 
           
+
           
+          <div class="mb-10"></div>
           
-        </div>
-        
+
         
 
         
@@ -687,8 +727,8 @@
           
         
       <script>
-        var oid = "views_projects\\EE4002D (Final year project) copy\\index.MD"
-        var oid_likes = "likes_projects\\EE4002D (Final year project) copy\\index.MD"
+        var oid = "views_projects\\Stonks bot\\index.MD"
+        var oid_likes = "likes_projects\\Stonks bot\\index.MD"
       </script>
       
       
@@ -708,15 +748,10 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/projects/ee4002d-final-year-project/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/projects/ee4002d-final-year-project/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
@@ -724,12 +759,19 @@
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
+                    <time datetime="2025-05-27T00:00:00&#43;00:00">27 May 2025</time>
+                  
                 </span>
               </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
             </a>
-          
-        </span>
-        <span>
           
         </span>
       </div>
