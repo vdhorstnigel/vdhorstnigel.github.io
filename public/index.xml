@@ -211,5 +211,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/stonks-bot/projects/Stonks%20bot/featured.webp" />
     </item>
     
+    <item>
+      <title></title>
+      <link>http://localhost:1313/google9d0b751707f98762/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
+      <guid>http://localhost:1313/google9d0b751707f98762/</guid>
+      <description></description>
+      
+    </item>
+    
   </channel>
 </rss>
