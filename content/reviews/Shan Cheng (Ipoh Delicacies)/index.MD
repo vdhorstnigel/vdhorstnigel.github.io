@@ -19,3 +19,9 @@ GF review
 ordered the chilli banmian and teh c peng and was very satisfied, i did ask for less spice and it was the perfect amount of spice for me. the noodles were youmian and were very chewy, and the sauce clung to the noodles well. only thing is it might be on the drier side but i felt that it was still yummy. the soup was simple yet tasty. However, the fishballs were lacking in texture. overall banmian gets 8/10. the teh c peng was pretty good as well
 
 Honestly, this place feels like a cozy cafe. It has a nice chill atmosphere, the prices are slightly more pricey but way lower than chains like ipoh town. Do drop by if you’re around the area.
+
+![Our meal](featured.JPEG "What we ordered")
+![Chilli Banmian](1.JPEG "Chilli Banmian")
+![Curry Mee](2.JPEG "Curry Mee")
+![Curry Toast](3.JPEG "Curry Toast")
+![Drinks](4.JPEG "Drinks")

@@ -19,3 +19,5 @@ GF review
 The soup mee hoon kuey was quite normal. The noodles were chewy and thick and the minced meat was yummy as it had a bit of tendon inside, giving it an extra bite. the egg was poached perfectly and paired with the soup created a good combination of salty and creaminess. overall this is your standard mee hoon kueh/ soup banmian. however, i do find that you get more food if you order this over the dry variation, even though it’s $1 cheaper and it could do with more ikan bills.
 
 Overall, this cafe has pretty nice aesthetics, good and welcoming service, decently priced with decent food. Not a bad place to drop by but not really quite a hidden gem like others described.
+
+![Alt text](1.JPEG)

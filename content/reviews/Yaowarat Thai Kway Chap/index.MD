@@ -22,3 +22,7 @@ For sides, we got the fried intestines. Although the sides are more expensive, i
 The thai red milk tea was a bit disappointing for a thai store, dint really like it so much. 6/10
 
 Don’t miss this place as it’s a wonderful supper spot which closes at 3am. Bring more friends to share the sides with!
+
+![Our meal](featured.JPEG "What we ordered")
+![Fried intestine](1.JPEG "Fried intestine")
+![Kwapchap](2.JPEG "Thai Kwapchap")

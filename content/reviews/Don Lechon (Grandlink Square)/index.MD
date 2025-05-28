@@ -20,3 +20,6 @@ Ordered the chopped lechon rice set, huge portion of pork and very crispy - 8/10
 Gf review
 the sisig hot plate was my favourite between
 the two. it was really flavorful and fatty, the egg and the chilli’s paired amazingly well with the rice. my only qualm is that it can be a little oily. - 8/10
+
+![Sisig](featured.JPEG "Sisig")
+![Chopped Lechon Rice Set](1.JPEG "Chopped Lechon Rice Set")

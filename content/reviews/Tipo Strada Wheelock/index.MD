@@ -20,4 +20,8 @@ Ordered the chicken pesto which tasted superb except that the chicken was dry. T
 Ordered Truffle Tramezzini. Was decent tasting and i would rate it 7/10 but considering it was about 15 SGD. It’s more like 5/10.
 
 Girlfriend’s review
-The duck carbonara is one of my faves. THE flavors taste authentic and the pasta was cooked perfectly chewy. The duck was delicious as well. Don’t miss this one on the menu — 9/10
+The duck carbonara is one of my faves. The flavors taste authentic and the pasta was cooked perfectly chewy. The duck was delicious as well. Don’t miss this one on the menu — 9/10
+
+![Chicken Pesto](featured.JPEG "Chicken Pesto")
+![Duck Carbonara](1.JPEG "Duck Carbonara")
+![Truffle Tramezzini](3.JPEG "Truffle Tramezzini")

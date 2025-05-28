@@ -24,3 +24,5 @@ Spam fries was a good portion for 4.50 dollars, lightly seasoned and wasn’t oi
 
 Girlfriends review\
 Got the Mentaiko Chicken Don, the chicken was nicely fried and the Mentaiko was an alright portion. The egg was perfectly poached and had a jammy yolk. Overall, quite a yummy but normal dish that I think kids will enjoy more. Also both our meals came with soup that we couldn’t figure out what stock it was. My best guess is fish? 7/10
+
+![Our Meal](featured.JPEG "What we ordered")

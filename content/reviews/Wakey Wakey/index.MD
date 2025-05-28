@@ -21,3 +21,5 @@ Bacon avo garlic bagel - 20.90: Tasted pretty decent but was served a little col
 Pulled pork burger - 21.90: Horrible, was more like a shredded pork burger, pulled pork was thick and dry.
 
 Was quite disappointed with the food, especially seeing all the good reviews recently.
+
+![Our meal](featured.png "What we ordered")
