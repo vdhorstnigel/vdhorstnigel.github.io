@@ -73,8 +73,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
-    <meta property="article:published_time" content="2020-05-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2020-05-20T00:00:00+00:00">
+    <meta property="article:published_time" content="2023-11-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-11-10T00:00:00+00:00">
     <meta property="og:image" content="http://localhost:1313/projects/microcontroller-drone/projects/Microcontroller%20Drone/featured.png">
 
   
@@ -99,16 +99,16 @@
       "@type": "Person",
       "name": "Nigel van der Horst"
     },
-    "copyrightYear": "2020",
-    "dateCreated": "2020-05-20T00:00:00\u002b00:00",
-    "datePublished": "2020-05-20T00:00:00\u002b00:00",
+    "copyrightYear": "2023",
+    "dateCreated": "2023-11-10T00:00:00\u002b00:00",
+    "datePublished": "2023-11-10T00:00:00\u002b00:00",
     
-    "dateModified": "2020-05-20T00:00:00\u002b00:00",
+    "dateModified": "2023-11-10T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "16"
+    "wordCount": "1245"
   }]
   </script>
 
@@ -581,7 +581,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2020-05-20T00:00:00&#43;00:00">20 May 2020</time><span class="px-2 text-primary-500">&middot;</span><span>16 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+  <time datetime="2023-11-10T00:00:00&#43;00:00">10 November 2023</time><span class="px-2 text-primary-500">&middot;</span><span>1245 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
   
 
   
@@ -653,7 +653,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  This project was done before this blog and most information is from memory
+  This project was done before this blog and most information is from my report
 </div>
 
 <div class="flex flex-row flex-wrap items-center space-x-2">
@@ -699,6 +699,171 @@
 </div>
 </div>
 
+<p>Board Used:stm32l475vg</p>
+<p>Sensors Used:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Sensors</th>
+          <th>Usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Accelerometer</td>
+          <td>Used to measure the z acceleration and detect if the drone is upside down and therefore “attacked” (&lt; -6 m/s^2 indicates drone is upside down) and trigger The Last of EE2028. Measured in m/s^2.</td>
+      </tr>
+      <tr>
+          <td>Gyroscope</td>
+          <td>Used to measure the angular velocity (rotation) in all the 3 dimensions. Take the overall magnitude of all dimensions to find if the drone is suffering bad turbulence (&gt; 5 rad/s indicates a chance of crashing). Measured in rad/s</td>
+      </tr>
+      <tr>
+          <td>Magnetometer</td>
+          <td>Used to detect magnetic fields and can therefore detect dangers for humans (eg:bombs) (&gt; 500 uT indicates a chance of a bomb present). Measured in uT.</td>
+      </tr>
+      <tr>
+          <td>Temperature Sensor</td>
+          <td>Used to measure surrounding temperatures. Check if the temperature of the surrounding is less than 40 deg C (&gt; 40 deg C indicates too hot for humans to live). Measured in deg celsius</td>
+      </tr>
+      <tr>
+          <td>Pressure Sensor</td>
+          <td>Used to measure the atmospheric pressure. The atmospheric pressure can indicate the height of the drone or the current weather. If the measured pressure is less than 1000 mb (millibar), it indicates that the drone is too high and may lose connection to the base or indicates a chance of a storm coming. Measured in mb.</td>
+      </tr>
+      <tr>
+          <td>Humidity Sensor</td>
+          <td>Used to measure the relative humidity. Check if relative humidity is more than 50%rH.( &lt; 50%rH means not enough humidity for humans, allowing for virus to spread more easily). Measured in %rH</td>
+      </tr>
+      <tr>
+          <td>Humidity Sensor</td>
+          <td>The OLED Display allows for minimal level information display on the drone without a serial connection. It is able to display the 3 operating modes of the drone, Lasergun energy level, Lasergun firing, Last of ee2028 countdown and final message. This allows us to do low level troubleshooting without connecting to the drone.</td>
+      </tr>
+      <tr>
+          <td>Buzzer</td>
+          <td>The buzzer gives the drone sound feedback for warnings. The buzzer is activated when the lasergun is fired and during the countdown of the last of ee2028.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Intially, we used the HAL delay library to write a delay of 1 second, but we learnt that it waste a lot of computer cycles as it does not do anything for 1 second. We learned to get the systick and calculate the difference in ticks to count 1 second instead. This allows us to do some interrupts as well.
+For pushbutton interrupt, we can take the ticks measured when the button is pressed. If the difference is less than 1 second, its considered a double press, and if the difference is more than 1 second, its a single press. We use a flag to differentiate single and double press.
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="flowchart"
+    srcset="
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/interrupt_hu_6556300890ed87bf.png 330w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/interrupt_hu_3640b581d6bf81f3.png 660w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/interrupt_hu_12d92a27d6a698ff.png 1280w"
+    data-zoom-src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/interrupt.png"
+    src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/interrupt.png"
+  />
+
+  
+    <figcaption>Pushbutton and Systick Interrupt</figcaption>
+</figure>
+</p>
+<p>Detailed implementation of the sensors:</p>
+<p>Accelerometer
+The value obtained from the BSP function is in mg. We would need to convert it to m/s^2 by taking mg * (9.8/1000). We then only return the Z acceleration to detect if the drone is upside down and therefore attacked.</p>
+<p>Gyroscope
+The value obtained from the BSP function is in mdeg. We would need to convert it to rad/s by taking mdeg * 1/1000 * pi/180. We then return the overall magnitude. This allows us to detect if the drone is undergoing turbulence.</p>
+<p>Magnetometer
+The value obtained from the BSP function is in mgauss. We would need to convert it to uT by
+taking gauss * 1/1000. We then return the overall magnitude. This allows us to detect magnetic
+fields near the drone. This can indicate a potential bomb nearby thus allowing the drone to scout
+for landmines.</p>
+<p>Temperature Sensor
+The value obtained from the BSP function is in degC. We can use this reading to determine if
+the surrounding temperature is too hot for humans.</p>
+<p>Pressure Sensor
+The value obtained from the BSP function is in hPa. We would need to covert it to mb, it is a 1 to
+1 conversion ratio.We can use this reading to determine the drone height or if a storm is
+impending.</p>
+<p>Humidity Sensor
+The value obtained from the BSP function is in %rH. We can use this reading to determine the
+relative humidity is sufficient for humans to live in.</p>
+<p>Enhancements used: Buzzer and Oled Screen
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="Modes"
+    srcset="
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/modes_hu_e06316ae08f956c1.png 330w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/modes_hu_bc0934a5937017a4.png 660w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/modes_hu_be5bc565c94a32fb.png 1280w"
+    data-zoom-src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/modes.png"
+    src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/modes.png"
+  />
+
+  
+    <figcaption>Standby and Battle mode</figcaption>
+</figure>
+</p>
+<p>The OLED is using I2C1 to communicate with the board, we used GPIOB8 &amp; GPIOB9 in AF4
+mode for I2C1 SDA and SCL. Then using an external library we can call a function to fill the
+display as black to clear it, set the cursor, print out a formatted line and update the screen. I really wanted to add a bitmap to my project as i thought that it was a cool addition, so i set up the bitmap to appear when the drone dies.
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="The last"
+    srcset="
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/featured_hu_fc4770f18283a596.png 330w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/featured_hu_714f513745640731.png 660w,
+      /projects/microcontroller-drone/projects/Microcontroller%20Drone/featured_hu_ee89715008996933.png 1280w"
+    data-zoom-src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/featured.png"
+    src="/projects/microcontroller-drone/projects/Microcontroller%20Drone/featured.png"
+  />
+
+  
+    <figcaption>The last Bitmap</figcaption>
+</figure>
+</p>
+<p>The buzzer buzzes during Last of EE2028 countdown and during Lasergun Firing. The buzzer GPIOB1 for arduino pin D6 and buzzes when a high is written to the pin. Originally I wanted to change the frequency of the buzzer to sound more like a lazer gun, however I was unable to write the frequency and could only output a digital high to the buzzer to sound it.</p>
+<p>Issues faced
+Hard fault during sprintf for float values:
+I was unable to solve this issues, sprintf just did not want to work with float values for this board, So i divided the float into 2 ints which solved it temporarily.</p>
+<p>Accuracy of sensors:
+Another issue was reading the values from the BSP function and converting them to the
+appropriate units. To this we can follow the suggestion of reading the datasheet to see the
+sensitivity and then reading the BSP function to see how the return value is calculated.
+However, I was still unsure of how accurate this reading was. The solution was to use matlab.
+For example, we can use stm32l475vg_humidity_temperature_sensor command to generate a
+model to measure humidity and temperature. We can use stm32l475vg_magnetometer_sensor for M, stm32l475vg_accel_gyro_sensor for
+A&amp;G and stm32l475vg_pressure_sensor for P. However, some of their sensors are not
+configured correctly and their measurements are using the wrong units. However, it is still a
+good way to double check our readings. Also Matlab simulink uses com3 to communicate with
+the board, therefore we cannot use teraterm for UART at the same time.</p>
+<p>Issues or suggestions: Please feel free to give us some feedback to make
+this course a better one . Your feedback, whether positive or negative, will
+not affect your marks.
+This course can consider using arduino for micro controllers as STM32 does not seem
+frequently used outside.
+The projects in this course could be done solo as sharing the board is difficult between
+teammates and can reduce productivity.</p>
+<p>Conclusion
+This assignment taught us how to use the STM32CubeIDE for debugging as well as an IDE for
+us to write code in. It also taught us how to research on our own using the device manual and
+datasheet instead of googling everything or asking teachers. This skill will definitely be used in
+the future where we would need to research the solution on our own instead of depending on
+supervisors. No help was given also for enhancements, forcing us to self learn and depend on
+our own interpretation of the datasheet. Leading us to research more about a deeper
+understanding for the STM32 board. We also learnt using various tools such as teraterm for
+serial communication and matlab simulink. We also learnt how to implement external drivers for
+the OLED boards.</p>
 
           
           
@@ -860,7 +1025,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/projects/stonks-bot/">
+            <a class="flex group mr-3" href="/projects/cdr-reader/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -876,7 +1041,7 @@
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2020-05-10T00:00:00&#43;00:00">10 May 2020</time>
+                    <time datetime="2020-05-20T00:00:00&#43;00:00">20 May 2020</time>
                   
                 </span>
               </span>
@@ -885,15 +1050,15 @@
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/projects/cdr-reader/">
+            <a class="flex text-right group ml-3" href="/projects/ee4002d-final-year-project/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >CDR-Reader</span
+                  >EE4002D</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2020-05-20T00:00:00&#43;00:00">20 May 2020</time>
+                    <time datetime="2025-05-27T00:00:00&#43;00:00">27 May 2025</time>
                   
                 </span>
               </span>
