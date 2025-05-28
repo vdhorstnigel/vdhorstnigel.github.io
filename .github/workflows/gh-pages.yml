@@ -7,13 +7,14 @@ on:
     branches:
       - master
 
+env:
+  GOOGLE_API: ${{ secrets.GOOGLE_API }}
+
 jobs:
   build-deploy:
     runs-on: ubuntu-24.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
-    env:
-      GOOGLE_API: ${{ secrets.GOOGLE_API }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,6 +26,10 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+      
+      - name: Inject Google Maps API Key
+        run: |
+          find ./layouts/partials -type f -name "reviews-map.html" -exec sed -i "s|__GOOGLE_API__|${GOOGLE_API}|g" {} +
 
       - name: Build
         run: hugo --minify
