@@ -14,3 +14,5 @@ longitude: 103.8832756
 Rating: {{< stars 5 >}}
 
 Pranced upon this stall in old airport food center. Wasn’t expecting much and decided to get one as a snack. But i was pleasantly surprised on how good it tasted considering it said vegetarian oat pancake. It was chewy, crunchy texture, and not very sweet. The uncle was very friendly and the service was quick and good. The peanut MJK was 1.30 and priced quite affordably. Honestly, would prefer this over munchi due to being less sweet.
+
+![Our meal](featured.JPEG "What we ordered")

@@ -20,4 +20,7 @@ The soup mee hoon kuey was quite normal. The noodles were chewy and thick and th
 
 Overall, this cafe has pretty nice aesthetics, good and welcoming service, decently priced with decent food. Not a bad place to drop by but not really quite a hidden gem like others described.
 
-![Alt text](1.JPEG)
+![Homemade Kaya Toast](featured.JPEG "Homemade Kaya Toast")
+![Chilli Panmee](1.JPEG "Chilli Panmee")
+![Mee hoon kuey](2.JPEG "Mee hoon kuey")
+
