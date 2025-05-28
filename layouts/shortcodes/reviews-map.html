@@ -1,0 +1,45 @@
+<div id="reviews-map" style="width: 50vw; height: 500px; border-radius: 10px;"></div>
+
+<script>
+  function initMap() {
+    const mapEl = document.getElementById("reviews-map");
+    if (!mapEl) return;
+
+    const map = new google.maps.Map(mapEl, {
+      zoom: 12,
+      center: { lat: 1.3521, lng: 103.8198 }, // Adjust to your preferred default
+    });
+
+    const markers = [
+      {{ range where .Site.RegularPages "Section" "reviews" }}
+        {
+          position: { lat: {{ .Params.latitude }}, lng: {{ .Params.longitude }} },
+          title: {{ .Title | jsonify }},
+          url: {{ .RelPermalink }}
+        },
+      {{ end }}
+    ];
+
+    markers.forEach(marker => {
+      const m = new google.maps.Marker({
+        position: marker.position,
+        map: map,
+        title: marker.title,
+      });
+
+      m.addListener("click", () => {
+        window.location.href = marker.url;
+      });
+    });
+  }
+</script>
+
+<script 
+  async 
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJK47p6LP3UyZKiDbdmF66SixsR44oMmM&callback=initMap">
+</script>
+
+
+
+

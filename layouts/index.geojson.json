@@ -1,0 +1,19 @@
+{{- $pages := where .Site.Pages "Params.location" "!=" nil -}}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {{- range $index, $p := $pages -}}{{ if $index }},{{ end }}
+    {
+      "type": "Feature",
+      "properties": {
+        "title": {{ $p.Title | jsonify }},
+        "url": {{ $p.Permalink | jsonify }}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [{{ $p.Params.location.lng }}, {{ $p.Params.location.lat }}]
+      }
+    }
+    {{- end -}}
+  ]
+}
