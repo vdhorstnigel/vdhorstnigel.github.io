@@ -10,8 +10,8 @@ This project was done before this blog and most information is from my report
 
 
 {{< keywordList >}}
-{{< keyword icon="github" >}} [Github Repo](https://github.com/vdhorstnigel/CDR-Reader) {{< /keyword >}}
-{{< keyword icon = "code" >}} Python {{< /keyword >}}
+{{< keyword icon="github" >}} [Github Repo](https://github.com/vdhorstnigel/Microcontroller-Drone) {{< /keyword >}}
+{{< keyword icon = "code" >}} C {{< /keyword >}}
 {{< /keywordList >}}
 
 Board Used:stm32l475vg
