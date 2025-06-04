@@ -27,13 +27,13 @@ Arduino is much more simpler to use, with many libraries available that I can us
 ### Micropython:
 Micropython is the easiest language to use and I am the most familiar with it, but it suffers from performance. However, it would be the best backup as it is the best suited for machine learning.
 
-## Topics learnt
+## Topics learnt:
 Header vs C files
 static & volatile variables
 
 ## Reading the analog sensors:
 To read the analog sensors, I connected the sensors to the GPIO pins on ADC1, ADC2 is not recommended to be used as its reserved for WIFI.
-I use the esp adc oneshot libary to get the values instead of the continous library as I only get the values every 3 seconds, it would be easier than constantly reading the the sensors and get a sample instead.
+I use the esp adc oneshot libary to get the values instead of the continous library as I only get the values every 3 seconds, it would be easier than constantly reading the the sensors and get a sample instead. Currently I can only gurantee the humidity and temperature sensor working, Im unsure how to ensure that the VOC sensors is giving accurate values.
 ![Sensor](sensor_read.png "Serial print of the analog values")
 
 ## Wifi connection:
@@ -41,6 +41,14 @@ For the wifi, I used the wifi_connect library and modified the code slightly to 
 
 ## MQTT broker:
 For MQTT connection, I was initially using the sample mqtt5 program given, but it was very convuluted and bloated. So I decided to keep only the mqtt initialization and do a single publish using esp_mqtt_client_publish. I also had to import the certificate to connect to the broker over mqtts.
+The photo below shows me being able to receive the values from the esp32 over mqtt, the esp32 is actually in my fridge now getting the values!
+![Mqtt](mqtt.png "Reading the values from MQTT broker")
+
+## Why Wifi and MQTT is so important:
+Wifi and MQTT allows my esp32 to send the values from my esp32 to a data silo, allowing me to retrieve the values I need from the pc. I can get real data from the fridge without connecting to my pc! This also allows me to test my machine learning algorithmn on the pc first with the data from the esp32.
+![Fridge](ESP_in_fridge.png "Getting the values from the esp32 in the fridge")
+
+
 
 ## Issues Faced:
 ### Wifi was intermittent and could not connect frequently:
@@ -54,3 +62,10 @@ Found out that loose cables made the initializing fail when trying to read the s
 
 ### LCD stopped working and sensors values inaccurate:
 One of the sensor got shorted, causing voltage issues when reading the analog output. It also heated up really quickly and burnt my finger when i check on it, I only knew it was burning when i smelt something burning. So please check your connections carefully!
+![burnt](burnt.png "My finger that burnt")
+
+### Tensorflow did not run:
+Tensorflow does not support my python version (3.12), I had to install python version (3.11) for it to work
+
+#### Sensors were given the wrong values:
+Originally I was using GPIO 4,5 for my humidity and temperature sensor which worked well. GPIO 6,7 for my I2C LCD which also worked well and GPIO 8,9,10 for my VOC sensors which wasnt working, they always gave a max 4095 value which was weird. Apparently, the GPIO pins were being used for the flash memory and there was a conflict? Im not too sure, but i remapped the pins. My humidity and temperature sensors are using GPIO 1,2. My I2C LCD is using GPIO 20,19 which is the recommended pins from other blogs. My VOC sensors are using GPIO 3,4,5 and its working now! I tested by spraying my cologne near the ethanol sensor and it spiked up. So be careful to check that pins are not conflicting, I read that I am not supposed to use ADC2 as well because the bus is shared with the WIFI and it will interrupt the reading, although you can probably queue the process nicely to avoid that, its easier to just use another pin as they provide plenty.
