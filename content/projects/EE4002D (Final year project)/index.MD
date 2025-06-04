@@ -46,7 +46,7 @@ The photo below shows me being able to receive the values from the esp32 over mq
 
 ## Why Wifi and MQTT is so important:
 Wifi and MQTT allows my esp32 to send the values from my esp32 to a data silo, allowing me to retrieve the values I need from the pc. I can get real data from the fridge without connecting to my pc! This also allows me to test my machine learning algorithmn on the pc first with the data from the esp32.
-![Fridge](ESP_in_fridge.png "Getting the values from the esp32 in the fridge")
+![Fridge](ESP_in_fridge.JPEG "Getting the values from the esp32 in the fridge")
 
 
 
@@ -62,7 +62,7 @@ Found out that loose cables made the initializing fail when trying to read the s
 
 ### LCD stopped working and sensors values inaccurate:
 One of the sensor got shorted, causing voltage issues when reading the analog output. It also heated up really quickly and burnt my finger when i check on it, I only knew it was burning when i smelt something burning. So please check your connections carefully!
-![burnt](burnt.png "My finger that burnt")
+![burnt](burnt.JPEG "My finger that burnt")
 
 ### Tensorflow did not run:
 Tensorflow does not support my python version (3.12), I had to install python version (3.11) for it to work
