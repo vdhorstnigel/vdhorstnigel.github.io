@@ -6,6 +6,7 @@ date: 2025-05-27
 
 {{< keywordList >}}
 {{< keyword icon="github" >}} [Github Repo](https://github.com/vdhorstnigel/EE4002D_FRESH) {{< /keyword >}}
+{{< keyword icon="github" >}} [Github Pages](https://vdhorstnigel.github.io/EE4002D) {{< /keyword >}}
 {{< keyword icon = "code" >}} C {{< /keyword >}}
 {{< /keywordList >}}
 
@@ -48,6 +49,9 @@ The photo below shows me being able to receive the values from the esp32 over mq
 Wifi and MQTT allows my esp32 to send the values from my esp32 to a data silo, allowing me to retrieve the values I need from the pc. I can get real data from the fridge without connecting to my pc! This also allows me to test my machine learning algorithmn on the pc first with the data from the esp32.
 ![Fridge](ESP_in_fridge.JPEG "Getting the values from the esp32 in the fridge")
 
+## Getting data:
+Im using a cut banana in the fridge, this allows the banana to spoil faster so that we can collect some reference data. After around a day plus, not much change is noted but the ethanol has been on a decline which is weird to me, banana looks drier but not spoilt yet. After 2 days ethanol levels has been fluctuating like a sine wave, but seems to be declining which is unexpected.
+![Banana](Banana.JPEG "Banana in fridge")
 
 
 ## Issues Faced:
@@ -67,5 +71,14 @@ One of the sensor got shorted, causing voltage issues when reading the analog ou
 ### Tensorflow did not run:
 Tensorflow does not support my python version (3.12), I had to install python version (3.11) for it to work
 
-#### Sensors were given the wrong values:
+### Sensors were given the wrong values:
 Originally I was using GPIO 4,5 for my humidity and temperature sensor which worked well. GPIO 6,7 for my I2C LCD which also worked well and GPIO 8,9,10 for my VOC sensors which wasnt working, they always gave a max 4095 value which was weird. Apparently, the GPIO pins were being used for the flash memory and there was a conflict? Im not too sure, but i remapped the pins. My humidity and temperature sensors are using GPIO 1,2. My I2C LCD is using GPIO 20,19 which is the recommended pins from other blogs. My VOC sensors are using GPIO 3,4,5 and its working now! I tested by spraying my cologne near the ethanol sensor and it spiked up. So be careful to check that pins are not conflicting, I read that I am not supposed to use ADC2 as well because the bus is shared with the WIFI and it will interrupt the reading, although you can probably queue the process nicely to avoid that, its easier to just use another pin as they provide plenty.
+
+### MQTT disconnecting every 2 hours
+MQTT would disconnect every 2 hours, suspected that the session expires and the client doesnt reconnect. Changed the expiry interval to infinite so it doesnt expire, enable auto-reconnect, and added a fail safe to check if mqtt_client is connected before sending the values to mqtt to prevent loss of data. Will continue to monitor. Currently the sessions are not expiring but messages drop to 0 after around 18 hours, more logging needs to be done to find the root cause.
+![MQTT_sessions](mqtt_sessions.png "2 sessions over the period of a few hours")
+![MQTT_messages](mqtt_messages.png "Messages dropped at 10am")
+
+### Security
+My javascript website that is hosted on github pages has the broker infomation and credentials, Which is vulnerable as people can easily see the broker credentials and enter faux data, I assigned a read only account for my website reducing the vulnerability, have to find a better solution next time.
+My code also had hard coded credentials, added credentials to gitignore. Decided against doing env variables for esp32
