@@ -25,6 +25,11 @@
   pageRef = "/reviews"
   weight = 3
 
+[[main]]
+  name = "My Reseume"
+  pageRef = "/resume"
+  weight = 10
+
 
 #[[main]]
 #  name = "example sub-menu 1"
