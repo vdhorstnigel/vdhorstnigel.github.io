@@ -49,9 +49,11 @@ The photo below shows me being able to receive the values from the esp32 over mq
 Wifi and MQTT allows my esp32 to send the values from my esp32 to a data silo, allowing me to retrieve the values I need from the pc. I can get real data from the fridge without connecting to my pc! This also allows me to test my machine learning algorithmn on the pc first with the data from the esp32.
 ![Fridge](ESP_in_fridge.JPEG "Getting the values from the esp32 in the fridge")
 
-## Getting data:
+## Initial data collection test with banana 04/06/25 5:30pm - 09/06/25 10pm:
 Im using a cut banana in the fridge, this allows the banana to spoil faster so that we can collect some reference data. After around a day plus, not much change is noted but the ethanol has been on a decline which is weird to me, banana looks drier but not spoilt yet. After 2 days ethanol levels has been fluctuating like a sine wave, but seems to be declining which is unexpected.
 ![Banana](Banana.JPEG "Banana in fridge")
+Unfortunately, my powerbank ran out of power and I was unable to fully capture the spoiling process. Furthermore, the mqtt client was disconnecting intermittently. But we can see how the VOC changes according to time with this preliminary data. Excluding the EtOH spike which is most likely an outlier, we can see that there is a significant increase in the VOCs, notably H2S and Ethanol. This shows that the VOCs can be captured and this is a viable project. However, more testing is required.
+![VOC Banana](VOC_banana.png)
 
 
 ## Issues Faced:
