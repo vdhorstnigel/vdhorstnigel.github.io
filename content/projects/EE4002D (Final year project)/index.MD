@@ -55,6 +55,9 @@ Im using a cut banana in the fridge, this allows the banana to spoil faster so t
 Unfortunately, my powerbank ran out of power and I was unable to fully capture the spoiling process. Furthermore, the mqtt client was disconnecting intermittently. But we can see how the VOC changes according to time with this preliminary data. Excluding the EtOH spike which is most likely an outlier, we can see that there is a significant increase in the VOCs, notably H2S and Ethanol. This shows that the VOCs can be captured and this is a viable project. However, more testing is required.
 ![VOC Banana](VOC_banana.png)
 
+## UART ethylene sensor:
+The ethylene sensor is connected by UART and also includes a temperature and humidity sensor. Now i shall run the sensor in the fridge allowing it to heat up and see what is the rough VOC sensor level and temperature, humidity difference between the two sensors.
+![ethylene sensor](uart_sensor.png)
 
 ## Issues Faced:
 ### Wifi was intermittent and could not connect frequently:
@@ -84,3 +87,6 @@ MQTT would disconnect every 2 hours, suspected that the session expires and the 
 ### Security
 My javascript website that is hosted on github pages has the broker infomation and credentials, Which is vulnerable as people can easily see the broker credentials and enter faux data, I assigned a read only account for my website reducing the vulnerability, have to find a better solution next time.
 My code also had hard coded credentials, added credentials to gitignore. Decided against doing env variables for esp32
+
+### UART connection:
+Im finally trying to connect my ethylene sensor using UART. I was having difficulty verifying if the data was being sent, but i learnt that if u connect the TX to the RX on the board u can check if sending and receiving data is working, meaning the sensor is having problem interpreting my commands. For some reason, it just does not want to read what I send it, but receiving works fine if i force it to continously send infomation. After a long trouble shooting period, I realized that I connected the Sensor_RX to the ESP32_RX and Sensor_TX to the ESP32_TX, Of course it dint work! After connecting it appropriately I can receive data!
