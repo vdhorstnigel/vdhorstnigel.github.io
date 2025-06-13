@@ -3,139 +3,145 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/_index.MD/</loc>
+    <lastmod>2025-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/reviews/Gastrobeats-2025/</loc>
+    <lastmod>2025-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/reviews/_index.MD/</loc>
+    <lastmod>2025-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/projects/EE4002D-Final-year-project/</loc>
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/ee4002d-final-year-project/</loc>
+    <loc>http://localhost:1313/projects/_index.MD/</loc>
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/reviews/</loc>
+    <loc>http://localhost:1313/reviews/Wanglee-Cafe/</loc>
     <lastmod>2025-05-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/wanglee-cafe/</loc>
-    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/reviews/picky-snout/</loc>
+    <loc>http://localhost:1313/reviews/Picky-Snout/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/beach-road-scissors-cut-curry-rice---upper-thomson/</loc>
+    <loc>http://localhost:1313/reviews/Beach-Road-Scissors-Cut-Curry-Rice-Upper-Thomson/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/aunty-oats-pancake/</loc>
+    <loc>http://localhost:1313/reviews/Aunty-Oats-Pancake/</loc>
     <lastmod>2025-04-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/shan-cheng-ipoh-delicacies/</loc>
+    <loc>http://localhost:1313/reviews/Shan-Cheng-Ipoh-Delicacies/</loc>
     <lastmod>2025-04-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/style-palate/</loc>
+    <loc>http://localhost:1313/reviews/Style-Palate/</loc>
     <lastmod>2025-03-31T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/mad-charcoal/</loc>
+    <loc>http://localhost:1313/reviews/Mad-Charcoal/</loc>
     <lastmod>2025-03-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/don-lechon-grandlink-square/</loc>
+    <loc>http://localhost:1313/reviews/Don-Lechon-Grandlink-Square/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/r.k.-eating-house/</loc>
+    <loc>http://localhost:1313/reviews/R.K.-Eating-House/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/banh-mi-saigon/</loc>
+    <loc>http://localhost:1313/reviews/Banh-Mi-Saigon/</loc>
     <lastmod>2025-03-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/liu-kou-shui/</loc>
+    <loc>http://localhost:1313/reviews/Liu-Kou-Shui/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/yaowarat-thai-kway-chap/</loc>
+    <loc>http://localhost:1313/reviews/Yaowarat-Thai-Kway-Chap/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/tipo-strada-wheelock/</loc>
+    <loc>http://localhost:1313/reviews/Tipo-Strada-Wheelock/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/sen-yen-charcoal-traditional-toast/</loc>
+    <loc>http://localhost:1313/reviews/Sen-Yen-Charcoal-Traditional-Toast/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/bread-yard/</loc>
+    <loc>http://localhost:1313/reviews/Bread-Yard/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/reviews/wakey-wakey/</loc>
+    <loc>http://localhost:1313/reviews/Wakey-Wakey/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/microcontroller-drone/</loc>
+    <loc>http://localhost:1313/projects/Microcontroller-Drone/</loc>
     <lastmod>2023-11-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/cdr-reader/</loc>
+    <loc>http://localhost:1313/projects/CDR-Reader/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/stonks-bot/</loc>
+    <loc>http://localhost:1313/projects/Stonks-bot/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
