@@ -10,7 +10,6 @@ defaultContentLanguage = "en"
 
 enableRobotsTXT = true
 summaryLength = 0
-disablePathToLower = true
 
 buildDrafts = false
 buildFuture = false
