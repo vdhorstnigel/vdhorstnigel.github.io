@@ -56,12 +56,12 @@ Unfortunately, my powerbank ran out of power and I was unable to fully capture t
 ![VOC Banana](VOC_banana.png)
 
 ## UART ethylene sensor:
-The ethylene sensor is connected by UART and also includes a temperature and humidity sensor. Now i shall run the sensor in the fridge allowing it to heat up and see what is the rough VOC sensor level and temperature, humidity difference between the two sensors.
+The ethylene sensor is connected by UART and also includes a temperature and humidity sensor. Now i shall run the sensor in the fridge allowing it to heat up and see what is the rough VOC sensor level and temperature, humidity difference between the two sensors. But the data look wrong from the adc wrong, h2s is too high and etoh is too low, the temperature is too low also. Not sure if theres any connection issue, or adding the UART affected the other sensors.
 ![ethylene sensor](uart_sensor.png)
 
 ## Issues Faced:
 ### Wifi was intermittent and could not connect frequently:
-Attached a simple antennae to the ESP to increase the strength. 
+Attached a simple antennae to the ESP to increase the strength. The board I am using is ESP32-S3-DevKitC-1U, U meaning that there is no antennae on the PCB and an external one is needed. Get the non U version to avoid this!
 
 ### LCD had no inbuilt library and was difficult to configure the output:
 Tried integrating the Arduino-LiquidCrystal-I2C library but I'm using ESP-IDF 5.4.1 which does not support arduino. Integrated this library instead https://github.com/abdellah2288/esp32-i2c-lcd-driver
