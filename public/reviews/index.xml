@@ -9,7 +9,17 @@
     <managingEditor>vdhorstnigel@gmail.com (Nigel van der Horst)</managingEditor>
     <webMaster>vdhorstnigel@gmail.com (Nigel van der Horst)</webMaster>
     <copyright>&amp;copy; 2025 Nigel vdh</copyright>
-    <lastBuildDate>Mon, 19 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/reviews/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/reviews/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gastrobeats 2025</title>
+      <link>http://localhost:1313/reviews/gastrobeats-2025/</link>
+      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+      <author>vdhorstnigel@gmail.com (Nigel van der Horst)</author>
+      <guid>http://localhost:1313/reviews/gastrobeats-2025/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/reviews/gastrobeats-2025/reviews/Gastrobeats%202025/featured.JPEG" />
+    </item>
     
     <item>
       <title>Wanglee Cafe</title>
