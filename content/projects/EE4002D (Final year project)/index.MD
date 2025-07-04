@@ -30,34 +30,45 @@ Micropython is the easiest language to use and I am the most familiar with it, b
 
 ## Topics learnt:
 Header vs C files
-static & volatile variables
+Static & volatile variables
+Machine Learning
 
-## Reading the analog sensors:
+### Reading the analog sensors:
 To read the analog sensors, I connected the sensors to the GPIO pins on ADC1, ADC2 is not recommended to be used as its reserved for WIFI.
 I use the esp adc oneshot libary to get the values instead of the continous library as I only get the values every 3 seconds, it would be easier than constantly reading the the sensors and get a sample instead. Currently I can only gurantee the humidity and temperature sensor working, Im unsure how to ensure that the VOC sensors is giving accurate values.
 ![Sensor](sensor_read.png "Serial print of the analog values")
 
-## Wifi connection:
+### Wifi connection:
 For the wifi, I used the wifi_connect library and modified the code slightly to what I need. This works well very well except that the antannae is not strong enough and need an external antannae to connect better. I also used a WIFI_CONNECTED flag that i set to true or false if the wifi is connected. This allows me to only send data when wifi is connected. I read that using Xeventgroup is good to wait til the wifi is connected before proceeding however, I do not know if this is suitable for my need. I will continue using the wifi_connected flag first.
 
-## MQTT broker:
+### MQTT broker:
 For MQTT connection, I was initially using the sample mqtt5 program given, but it was very convuluted and bloated. So I decided to keep only the mqtt initialization and do a single publish using esp_mqtt_client_publish. I also had to import the certificate to connect to the broker over mqtts.
 The photo below shows me being able to receive the values from the esp32 over mqtt, the esp32 is actually in my fridge now getting the values!
 ![Mqtt](mqtt.png "Reading the values from MQTT broker")
 
-## Why Wifi and MQTT is so important:
+### Why Wifi and MQTT is so important:
 Wifi and MQTT allows my esp32 to send the values from my esp32 to a data silo, allowing me to retrieve the values I need from the pc. I can get real data from the fridge without connecting to my pc! This also allows me to test my machine learning algorithmn on the pc first with the data from the esp32.
 ![Fridge](ESP_in_fridge.JPEG "Getting the values from the esp32 in the fridge")
 
-## Initial data collection test with banana 04/06/25 5:30pm - 09/06/25 10pm:
+### Initial data collection test with banana 04/06/25 5:30pm - 09/06/25 10pm:
 Im using a cut banana in the fridge, this allows the banana to spoil faster so that we can collect some reference data. After around a day plus, not much change is noted but the ethanol has been on a decline which is weird to me, banana looks drier but not spoilt yet. After 2 days ethanol levels has been fluctuating like a sine wave, but seems to be declining which is unexpected.
 ![Banana](Banana.JPEG "Banana in fridge")
 Unfortunately, my powerbank ran out of power and I was unable to fully capture the spoiling process. Furthermore, the mqtt client was disconnecting intermittently. But we can see how the VOC changes according to time with this preliminary data. Excluding the EtOH spike which is most likely an outlier, we can see that there is a significant increase in the VOCs, notably H2S and Ethanol. This shows that the VOCs can be captured and this is a viable project. However, more testing is required.
 ![VOC Banana](VOC_banana.png)
 
-## UART ethylene sensor:
+### UART ethylene sensor:
 The ethylene sensor is connected by UART and also includes a temperature and humidity sensor. Now i shall run the sensor in the fridge allowing it to heat up and see what is the rough VOC sensor level and temperature, humidity difference between the two sensors. But the data look wrong from the adc wrong, h2s is too high and etoh is too low, the temperature is too low also. Not sure if theres any connection issue, or adding the UART affected the other sensors.
 ![ethylene sensor](uart_sensor.png)
+
+### Machine Learning
+For Machine learning, I want to do real-time anomaly detection based on the VOC data similar to how netdata does its anamoly detection.
+Reference here: https://github.com/netdata/netdata/blob/master/src/ml/notebooks/netdata_anomaly_detection_deepdive.ipynb
+Netdata uses the dlib c++ library and the find_cluster_using_kmeans function along with others so this is great for our use case.
+Netdata K-means code: https://github.com/netdata/netdata/blob/master/src/ml/ml_kmeans.cc
+
+### FreeRTOS
+I should be looking into FreeRTOS for scheduling and running task in parallel instead of using a linear loop with vtaskdelay to allow accurate reading every second.
+
 
 ## Issues Faced:
 ### Wifi was intermittent and could not connect frequently:
