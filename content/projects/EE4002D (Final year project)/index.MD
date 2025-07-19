@@ -38,6 +38,9 @@ To read the analog sensors, I connected the sensors to the GPIO pins on ADC1, AD
 I use the esp adc oneshot libary to get the values instead of the continous library as I only get the values every 3 seconds, it would be easier than constantly reading the the sensors and get a sample instead. Currently I can only gurantee the humidity and temperature sensor working, Im unsure how to ensure that the VOC sensors is giving accurate values.
 ![Sensor](sensor_read.png "Serial print of the analog values")
 
+#### Limitations of the analog sensors 
+Unfortunately, the sensors are qualitative not quantitative.This means that its unable to measure the VOC content accurately and can only read if its increasing or decreasing. However, this will be addressed by using machine learning, we only need to look at the trend of the data, we do not need the exact number to measure the VOC and access if the food is spoiling.
+
 ### Wifi connection:
 For the wifi, I used the wifi_connect library and modified the code slightly to what I need. This works well very well except that the antannae is not strong enough and need an external antannae to connect better. I also used a WIFI_CONNECTED flag that i set to true or false if the wifi is connected. This allows me to only send data when wifi is connected. I read that using Xeventgroup is good to wait til the wifi is connected before proceeding however, I do not know if this is suitable for my need. I will continue using the wifi_connected flag first.
 
@@ -60,15 +63,29 @@ Unfortunately, my powerbank ran out of power and I was unable to fully capture t
 The ethylene sensor is connected by UART and also includes a temperature and humidity sensor. Now i shall run the sensor in the fridge allowing it to heat up and see what is the rough VOC sensor level and temperature, humidity difference between the two sensors. But the data look wrong from the adc wrong, h2s is too high and etoh is too low, the temperature is too low also. Not sure if theres any connection issue, or adding the UART affected the other sensors.
 ![ethylene sensor](uart_sensor.png)
 
-### Machine Learning
+## Machine Learning
 For Machine learning, I want to do real-time anomaly detection based on the VOC data similar to how netdata does its anamoly detection.
 Reference here: https://github.com/netdata/netdata/blob/master/src/ml/notebooks/netdata_anomaly_detection_deepdive.ipynb
 Netdata uses the dlib c++ library and the find_cluster_using_kmeans function along with others so this is great for our use case.
 Netdata K-means code: https://github.com/netdata/netdata/blob/master/src/ml/ml_kmeans.cc
+Another K-means article: https://amid.fish/anomaly-detection-with-k-means-clustering
+
+### Unsupervised machine learning algorithms
+
+I had the idea of anomaly detection via unsupervised machine learning when using netdata as a network monitoring system. I thought that this would work great for recognizing food spoilage in the fridge. This is because all fridges are different and every fridge baseline VOC level might be different. Some people might have a higher baseline VOC level due to the various foods present. This allows the algorithmn to access the VOCS in the fridge then find anamolies when VOCs spike.
+
+#### Dimensions
+We have 4 sensors which means we would have 4 dimensions to process. Typically, most guides would recommend to do dimensionality reduction
+
+##### K-Means
+K-means is the basic clustering algorithm used for unsupervised machine learning and it is also very simple to implement.
+
+##### DBSCAN
+
+
 
 ### FreeRTOS
 I should be looking into FreeRTOS for scheduling and running task in parallel instead of using a linear loop with vtaskdelay to allow accurate reading every second.
-
 
 ## Issues Faced:
 ### Wifi was intermittent and could not connect frequently:
