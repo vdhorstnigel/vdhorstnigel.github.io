@@ -65,9 +65,15 @@ For Machine learning, I want to do real-time anomaly detection based on the VOC 
 Reference here: https://github.com/netdata/netdata/blob/master/src/ml/notebooks/netdata_anomaly_detection_deepdive.ipynb
 Netdata uses the dlib c++ library and the find_cluster_using_kmeans function along with others so this is great for our use case.
 Netdata K-means code: https://github.com/netdata/netdata/blob/master/src/ml/ml_kmeans.cc
+Unfortunately, the code is in c++ and difficult to link to C, however we can still use the concepts listed to build our own anamoly detection.
+I am using this library from pramsey: https://github.com/pramsey/kmeans, which is a simple C routine for k-means calculation which also allows multithreading for better perfomance.
+I can also look into using edge impulse for edge computing.
 
 ### FreeRTOS
 I should be looking into FreeRTOS for scheduling and running task in parallel instead of using a linear loop with vtaskdelay to allow accurate reading every second.
+
+### Edge computing
+Why is edge computing important? With machine learning and AI become some prevalent, many people know that training the model is computationally expensive and also uses alot of energy. However, many people also dont know that inferring from the model also uses alot of energy when transmitting or sending data on the internet. That is why edge computing is getting more popular now to reduce load on the network and have models run locally at the edge device.
 
 
 ## Issues Faced:
