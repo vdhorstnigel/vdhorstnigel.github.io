@@ -3,6 +3,8 @@ title: "Gastrobeats 2025"
 description: "Bayfront Events Space"
 date: 2025-06-08
 featuredImage: "featured.JPEG"
+latitude: 1.280581
+longitude: 103.854694
 ---
 
 {{< lead >}}
