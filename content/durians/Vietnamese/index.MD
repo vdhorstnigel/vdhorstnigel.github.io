@@ -1,6 +1,7 @@
 ---
 title: "Vietnamese Durian"
 description: "Ri6"
+date: 2025-12-30
 featuredImage: "featured.jpeg"
 ---
 
@@ -9,8 +10,17 @@ The types of durian found in vietnam
 {{< /lead >}}
 
 Rating: {{< stars 3.25 >}}
+
 Ri6 Variant
-lightly sweet, in between creamy and watery. Slight fermented taste for the more expensive ones. Durian taste is rather weak. It’s not too bad for light durian eating as dessert and really affordable as well. Read that the speciality of this type of durian is that it won’t stick to your skin, dint really get to test this out as we ate with gloves.
+
+Lightly sweet, in between creamy and watery.
+
+Slight fermented taste for the more expensive ones. 
+
+Durian taste is rather weak. It’s not too bad for light durian eating as dessert and really affordable as well. 
+
+Read that the speciality of this type of durian is that it won’t stick to your skin, dint really get to test this out as we ate with gloves.
+
 Price: 100-120K Dong ($5-6 SGD)
 
 ![Ri6](featured.JPEG "Ri6 Durian")
