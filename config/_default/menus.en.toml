@@ -26,6 +26,11 @@
   weight = 3
 
 [[main]]
+  name = "Durian Guide"
+  pageRef = "/durians"
+  weight = 4
+
+[[main]]
   name = "My Resume"
   url = "/nigel_vanderhorst.pdf"
   weight = 10
