@@ -1,7 +1,7 @@
 ---
 title: "Vietnamese Durian"
 description: "Durians of Vietnam"
-location: "Vietnam"
+origin: "Vietnam"
 featuredImage: "featured.jpeg"
 ---
 
