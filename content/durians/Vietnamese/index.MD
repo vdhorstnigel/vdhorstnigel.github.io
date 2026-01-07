@@ -1,7 +1,7 @@
 ---
 title: "Vietnamese Durian"
 description: "Durians of Vietnam"
-date: 2025-12-30
+location: "Vietnam"
 featuredImage: "featured.jpeg"
 ---
 

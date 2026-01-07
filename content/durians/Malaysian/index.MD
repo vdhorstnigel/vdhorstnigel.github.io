@@ -1,7 +1,7 @@
 ---
 title: "Malaysian Durian"
 description: "Durians of Malaysia"
-date: 2026-01-07
+location: "Malaysia"
 featuredImage: "featured.jpeg"
 ---
 
