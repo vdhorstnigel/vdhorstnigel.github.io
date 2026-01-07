@@ -63,33 +63,68 @@
     {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (site.Params.list.cardViewScreenWidth | default false) }}
 
     {{ $sortBy := lower (.Params.sortBy | default "title") }}
-    {{ if or (eq $sortBy "origin") (eq $sortBy "location") }}
-      {{ $pages = sort $pages "Params.origin" }}
-    {{ else }}
-      {{ $pages = sort $pages "Title" }}
-    {{ end }}
+    {{ $groupByOrigin := or (eq $sortBy "origin") (eq $sortBy "location") }}
 
     {{ if not $cardView }}
       <section class="space-y-10 w-full">
-        {{ range (.Paginate $pages).Pages }}
-          {{ partial "article-link/simple.html" . }}
+        {{ if $groupByOrigin }}
+          {{ range (sort ($pages.GroupByParam "origin") "Key") }}
+            <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key | default "Other" }}
+            </h2>
+            {{ range (sort .Pages "Title") }}
+              {{ partial "article-link/simple.html" . }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ range (.Paginate (sort $pages "Title")).Pages }}
+            {{ partial "article-link/simple.html" . }}
+          {{ end }}
         {{ end }}
       </section>
     {{ else }}
       {{ if $cardViewScreenWidth }}
-        <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
-          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-            {{ range (.Paginate $pages).Pages }}
+        {{ if $groupByOrigin }}
+          {{ range (sort ($pages.GroupByParam "origin") "Key") }}
+            <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
+              <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+                {{ .Key | default "Other" }}
+              </h2>
+              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+                {{ range (sort .Pages "Title") }}
+                  {{ partial "article-link/card.html" . }}
+                {{ end }}
+              </section>
+            </div>
+          {{ end }}
+        {{ else }}
+          <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              {{ range (.Paginate (sort $pages "Title")).Pages }}
+                {{ partial "article-link/card.html" . }}
+              {{ end }}
+            </section>
+          </div>
+        {{ end }}
+      {{ else }}
+        {{ if $groupByOrigin }}
+          {{ range (sort ($pages.GroupByParam "origin") "Key") }}
+            <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key | default "Other" }}
+            </h2>
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+              {{ range (sort .Pages "Title") }}
+                {{ partial "article-link/card.html" . }}
+              {{ end }}
+            </section>
+          {{ end }}
+        {{ else }}
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {{ range (.Paginate (sort $pages "Title")).Pages }}
               {{ partial "article-link/card.html" . }}
             {{ end }}
           </section>
-        </div>
-      {{ else }}
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {{ range (.Paginate $pages).Pages }}
-            {{ partial "article-link/card.html" . }}
-          {{ end }}
-        </section>
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ else }}
