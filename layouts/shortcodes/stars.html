@@ -1,10 +1,18 @@
-{{ $rating := .Get 0 }}
-<span style="color: #ffc107; font-size: 1.25rem;" title="{{ $rating }} stars">
+{{ $ratingRaw := .Get 0 }}
+{{ $rating := float $ratingRaw }}
+
+<span style="font-size: 1.25rem;" title="{{ $ratingRaw }} / 5 stars" aria-label="{{ $ratingRaw }} out of 5 stars">
   {{ range seq 1 5 }}
-    {{ if le . (float $rating) }}
-      <span>★</span>
-    {{ else }}
+    {{ $i := float . }}
+    {{ $remaining := sub $rating (sub $i 1) }}
+
+    {{ $fill := cond (ge $remaining 1) 100 (cond (ge $remaining 0.75) 75 (cond (ge $remaining 0.5) 50 (cond (ge $remaining 0.25) 25 0))) }}
+
+    <span style="position: relative; display: inline-block;">
       <span style="color: #e4e5e9;">★</span>
-    {{ end }}
+      {{- if gt $fill 0 -}}
+        <span style="position: absolute; left: 0; top: 0; width: {{ $fill }}%; overflow: hidden; color: #ffc107;">★</span>
+      {{- end -}}
+    </span>
   {{ end }}
 </span>

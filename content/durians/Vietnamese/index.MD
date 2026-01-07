@@ -1,6 +1,6 @@
 ---
 title: "Vietnamese Durian"
-description: "Ri6"
+description: "Durians of Vietnam"
 date: 2025-12-30
 featuredImage: "featured.jpeg"
 ---
