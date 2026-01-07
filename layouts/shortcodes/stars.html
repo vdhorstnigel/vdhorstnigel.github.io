@@ -1,7 +1,7 @@
 {{ $ratingRaw := .Get 0 }}
 {{ $rating := float $ratingRaw }}
 
-<span style="font-size: 1.25rem;" title="{{ $ratingRaw }} / 5 stars" aria-label="{{ $ratingRaw }} out of 5 stars">
+<span style="font-size: 4rem;" title="{{ $ratingRaw }} / 5 stars" aria-label="{{ $ratingRaw }} out of 5 stars">
   {{ range seq 1 5 }}
     {{ $i := float . }}
     {{ $remaining := sub $rating (sub $i 1) }}
