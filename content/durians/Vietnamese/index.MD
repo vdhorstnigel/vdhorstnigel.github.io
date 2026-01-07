@@ -1,13 +1,10 @@
 ---
-title: "Vietnamese Durian"
-description: "Durians of Vietnam"
+title: "Ri6"
+description: "Vietnamese Durian"
 origin: "Vietnam"
 featuredImage: "featured.jpeg"
+showDate: false
 ---
-
-{{< lead >}}
-The types of durian found in vietnam
-{{< /lead >}}
 
 Rating: {{< stars 3.25 >}}
 

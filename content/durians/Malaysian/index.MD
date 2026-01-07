@@ -1,13 +1,11 @@
 ---
-title: "Malaysian Durian"
-description: "Durians of Malaysia"
+title: "Mao Shan Wang"
+description: "Malaysian Durian"
 origin: "Malaysia"
 featuredImage: "featured.jpeg"
+showDate: false
 ---
 
-{{< lead >}}
-The types of durian found in malaysia
-{{< /lead >}}
 
 Rating: {{< stars 4.5 >}}
 
